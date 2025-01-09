@@ -16,6 +16,13 @@ import cv2  # Added for video processing
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 from src.core import YAMLConfig
 
+# How to use:  
+# python tools/inference/torch_inf.py -c configs/dfine/custom/dfine_hgnetv2_s_custom.yml 
+# -r /data1/zy/code/d_fine/output/dfine_hgnetv2_s_custom_ft_copper/best_stg2.pth 
+# --input /data1/zy/dataset/cooper001/newsplit/coco/test2017/ --device cuda:0 --output test_vis
+# remember to set --output to specify the output location
+
+
 category_colors = [
     (0, 0, 0),        # 灰色
     (145, 209, 79),  # 绿色
