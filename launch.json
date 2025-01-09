@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+
+    "configurations": [
+        {
+            "name": "TorchRun Training Debug",
+            "type": "python",
+            "request": "launch",
+            // "console": "integratedTerminal",
+            // "program": "${workspaceFolder}/train.py",
+            "module": "torch.distributed.run",
+            "args": [
+                "--master_port=7777",
+                "--nproc_per_node=1",
+                "train.py",
+                "-c",
+                "configs/dfine/custom/dfine_hgnetv2_s_custom.yml",
+                "--test-only",
+                "-r",
+                "/data1/zy/code/d_fine/output/dfine_hgnetv2_s_custom_ft_copper/best_stg2.pth",
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "9"
+            },
+            "cwd":"${workspaceFolder}"
+        }
+    ]
+
+}
