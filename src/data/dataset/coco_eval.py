@@ -17,7 +17,7 @@ from ...core import register
 from ...misc import dist_utils
 __all__ = ['CocoEvaluator',]
 
-
+# thanks to https://blog.csdn.net/qq_37541097/article/details/112248194
 def summarize0(self, catId=None):
     """
     Compute and display summary metrics for evaluation results.
