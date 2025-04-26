@@ -18,6 +18,10 @@ from ...misc import dist_utils
 __all__ = ['CocoEvaluator',]
 
 # thanks to https://blog.csdn.net/qq_37541097/article/details/112248194
+
+# there are bugs left:
+# [rank0]: stats['coco_eval_bbox'] = coco_evaluator.coco_eval['bbox'].stats.tolist() [rank0]: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [rank0]: AttributeError: 'list' object has no attribute 'tolist'
+# the eval results are printed before the bug
 def summarize0(self, catId=None):
     """
     Compute and display summary metrics for evaluation results.
